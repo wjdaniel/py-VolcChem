@@ -1,4 +1,4 @@
-# py-MineralPlot
+# py-VolcChem
 
 # ideas plots
 
