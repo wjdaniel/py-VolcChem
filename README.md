@@ -1,5 +1,9 @@
 # py-VolcChem
 
+This is a python package that I am building on common geochemical plots used in volcanology. 
+It is work in progress and its main purpose is for students in my petrology class to have easy access to these plots.
+There will be a lot of hand holding but feedback is welcomed.
+
 # ideas plots
 
 Bulk Rock, Matrix Glass, Melt Inclusion Classification:
@@ -34,7 +38,7 @@ Olivine:
 1. Fo against X variable
 
 
-# Calculate mineral identification
+# Recalculate mineral identification
 
 
 
