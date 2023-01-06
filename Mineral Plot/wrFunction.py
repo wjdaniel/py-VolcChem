@@ -31,6 +31,7 @@ def wrKClass():
     ax.plot(KSi5,KSi5_1,'k',linewidth=linethick,alpha=alp1)
 
 
+
     ax.vlines(x=52,ymin=0,ymax=4,colors='black',linewidth=linethick,alpha=alp1)
     ax.vlines(x=56,ymin=0,ymax=4.5,colors='black',linewidth=linethick,alpha=alp1)
     ax.vlines(x=63,ymin=0,ymax=5,colors='black',linewidth=linethick,alpha=alp1)
@@ -58,4 +59,12 @@ def wrKClass():
 
     mlib.ylabel('wt.% K$_{2}$O')
     mlib.xlabel('wt.% SiO$_{2}$')
-    return fig
+
+    return ax
+    
+
+
+
+
+
+
