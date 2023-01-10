@@ -14,11 +14,11 @@ def wrKClass():
     fs2=7
 
     ax.set(xlim=(46,80),ylim=(0,6))
-    KSi1=np.arange(43,81)
-    KSi2=np.arange(43,57)
-    KSi3=np.arange(56,71)
-    KSi4=np.arange(51,72)
-    KSi5=np.arange(70,81)
+    KSi1=np.asarray([43,80])
+    KSi2=np.asarray([43,56])
+    KSi3=np.asarray([56,70])
+    KSi4=np.asarray([51,71])
+    KSi5=np.asarray([70,80])
 
     KSi1_1=(2/45)*KSi1-(163/90)
     KSi2_1=(17/180)*KSi4-(65/18)
@@ -76,7 +76,7 @@ def wrANK():
     ank.vlines(x=1,ymin=0,ymax=3,colors='black',linewidth=linethick,alpha=alp1)
     ank.hlines(y=1,xmin=0,xmax=3,colors='black',linewidth=linethick,alpha=alp1)
     
-    AN1=np.arange(0,4)
+    AN1=np.asarray([0,3])
     ank.plot(AN1,AN1,'k',linewidth=linethick,alpha=alp1)
 
     ank.text(0.55,2.8,'Metaluminous',alpha=alp,fontsize=fs,multialignment='center')
@@ -88,10 +88,12 @@ def wrANK():
 
 def wrTAS():
     # TAS
+    alp2=0.3
     alp1=0.4
     alp=0.6
-    linethick=0.5
+    linethick=0.75
     fs=8
+    fs2=7
     fig,tas=mlib.subplots()
     tas.set(xlim=(36,81),ylim=(0,16))
 
@@ -102,7 +104,54 @@ def wrTAS():
     tas.hlines(y=5,xmin=45,xmax=52,colors='black',linewidth=linethick,alpha=alp1)
     tas.vlines(x=57,ymin=0,ymax=5.9,colors='black',linewidth=linethick,alpha=alp1)
     tas.vlines(x=63,ymin=0,ymax=7,colors='black',linewidth=linethick,alpha=alp1)
+    tas.vlines(x=69,ymin=8,ymax=15,colors='black',linewidth=linethick,alpha=alp1)
     tas.vlines(x=41,ymin=3,ymax=7,colors='black',linewidth=linethick,alpha=alp1,linestyles='dashed')
+    Si1=np.asarray([52,69])
+    Si1_1=(3/17)*Si1-(71/17)
+    Si2=np.asarray([45,65])
+    Si2_1=(67/126)*Si2-(265/14)
+    Si3=np.asarray([41,45])
+    Si3_1=(14/23)*Si3-(413/23)
+    Si4=np.asarray([45,52.5])
+    Si4_1=(14/23)*Si4-(413/23)
+    Si5=np.asarray([45, 49.4])
+    Si5_1=(-21/44)*Si5+6793/220
+    Si6=np.asarray([48.4,53])
+    Si6_1=(-11/23)*Si6+(7969/230)
+    Si7=np.asarray([50,57.6])
+    Si7_1=(-23/51)*Si7+(1281/34)
+    Si8=np.asarray([49.4,52])
+    Si8_1=(-23/26)*Si8+51
+    Si9=np.asarray([53,57])
+    Si9_1=(-17/20)*Si9+(1087/20)
+    Si10=np.asarray([57.6,63])
+    Si10_1=(-47/54)*Si10+(371/6)
+    Si11=np.asarray([69,77])
+    Si11_1=77-Si11
+
+    tas.plot(Si1,Si1_1,'k',linewidth=linethick,alpha=alp1)    
+    tas.plot(Si2,Si2_1,'k',linewidth=linethick,alpha=alp1)   
+    tas.plot(Si3,Si3_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si4,Si4_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si5,Si5_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si6,Si6_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si7,Si7_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si8,Si8_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si9,Si9_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si10,Si10_1,'k',linewidth=linethick,alpha=alp1)
+    tas.plot(Si11,Si11_1,'k',linewidth=linethick,alpha=alp1)
+
+    Sis=np.linspace(2.5,16,160)
+    Sis_1=((-3.3539*10**(-4))*Sis**6)+((1.2030*10**(-2))*Sis**5)-((1.5188*0.1)*Sis**4)+((8.6096*0.1)*Sis**3)-(2.1111*Sis**2)+(3.9492*Sis)+39
+    tas.plot(Sis_1,Sis,'--k',linewidth=linethick,alpha=alp1)
+    tas.text(75.5,9.3,'Subalkaline',fontsize=fs2,alpha=alp2,style='italic',rotation=10)
+    tas.text(77,10.3,'Alkaline',fontsize=fs2,alpha=alp2,style='italic',rotation=10)
+
+    tas.text()
+
+    mlib.ylabel('Na$_{2}$O+K$_{2}$O')
+    mlib.xlabel('SiO$_{2}$')
+    return tas
 
 
 
